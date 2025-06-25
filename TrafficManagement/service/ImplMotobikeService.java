@@ -3,21 +3,24 @@ package TrafficManagement.service;
 import TrafficManagement.entity.Motorbike;
 import TrafficManagement.repository.VehicleRepository;
 
+import java.util.ArrayList;
+
 public class ImplMotobikeService implements IMotobikeService{
     @Override
     public void addMotobike(Motorbike motorbike) {
-        VehicleRepository.motorbikes.add(motorbike);
+        VehicleRepository.appendVehicleToFile(motorbike);
     }
 
     @Override
     public void displayTruck() {
-        for (Motorbike motorbike:VehicleRepository.motorbikes){
+        ArrayList<Motorbike> motorbikes = VehicleRepository.readMotorbikesFromFile();
+        for (Motorbike motorbike : motorbikes) {
             motorbike.displayDetails();
         }
     }
 
     @Override
     public void deleteIdTruck(String idMotobike) {
-        VehicleRepository.motorbikes.removeIf(motorbike -> motorbike.idVehicle.equals(idMotobike));
+        VehicleRepository.removeVehicleByIdFromFile(idMotobike);
     }
 }

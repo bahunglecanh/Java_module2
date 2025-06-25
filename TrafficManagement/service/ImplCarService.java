@@ -3,23 +3,24 @@ package TrafficManagement.service;
 import TrafficManagement.entity.Car;
 import TrafficManagement.repository.VehicleRepository;
 
+import java.util.ArrayList;
+
 public class ImplCarService implements ICarService{
     @Override
     public void addCar(Car car) {
-        VehicleRepository.cars.add(car);
+        VehicleRepository.appendVehicleToFile(car);
     }
 
     @Override
     public void displayCar() {
-        for (Car car:VehicleRepository.cars){
+        ArrayList<Car> cars = VehicleRepository.readCarsFromFile();
+        for (Car car : cars) {
             car.displayDetails();
         }
     }
 
     @Override
     public void deleteIdCar(String idCar) {
-        VehicleRepository.cars.removeIf(car -> car.idVehicle.equals(idCar));
+        VehicleRepository.removeVehicleByIdFromFile(idCar);
     }
-
-
 }

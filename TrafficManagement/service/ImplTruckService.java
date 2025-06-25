@@ -1,24 +1,25 @@
 package TrafficManagement.service;
 
 import TrafficManagement.entity.Truck;
-import TrafficManagement.repository.VehicleRepository;
+import java.util.ArrayList;
 
 public class ImplTruckService implements ITruckService{
 
     @Override
     public void addTruck(Truck truck) {
-        VehicleRepository.trucks.add(truck);
+        TrafficManagement.repository.VehicleRepository.appendVehicleToFile(truck);
     }
 
     @Override
     public void displayTruck() {
-        for (Truck truck:VehicleRepository.trucks){
+        ArrayList<Truck> trucks = TrafficManagement.repository.VehicleRepository.readTrucksFromFile();
+        for (Truck truck : trucks) {
             truck.displayDetails();
         }
     }
 
     @Override
     public void deleteIdTruck(String idTruck) {
-        VehicleRepository.trucks.removeIf(truck -> truck.idVehicle.equals(idTruck));
+        TrafficManagement.repository.VehicleRepository.removeVehicleByIdFromFile(idTruck);
     }
 }
