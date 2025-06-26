@@ -1,6 +1,6 @@
-package Bai17.repository;
+package Bai17.quanlisanpham.repository;
 
-import Bai17.entity.Product;
+import Bai17.quanlisanpham.entity.Product;
 
 import java.io.*;
 import java.util.ArrayList;

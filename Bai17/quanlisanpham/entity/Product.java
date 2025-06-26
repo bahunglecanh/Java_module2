@@ -1,4 +1,4 @@
-package Bai17.entity;
+package Bai17.quanlisanpham.entity;
 
 import java.io.Serializable;
 

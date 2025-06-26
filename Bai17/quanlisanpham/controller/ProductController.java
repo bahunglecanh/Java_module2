@@ -1,7 +1,7 @@
-package Bai17.controller;
+package Bai17.quanlisanpham.controller;
 
-import Bai17.entity.Product;
-import Bai17.service.ProductService;
+import Bai17.quanlisanpham.entity.Product;
+import Bai17.quanlisanpham.service.ProductService;
 
 import java.util.List;
 

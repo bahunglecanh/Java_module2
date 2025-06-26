@@ -1,7 +1,7 @@
-package Bai17.view;
+package Bai17.quanlisanpham.view;
 
-import Bai17.controller.ProductController;
-import Bai17.entity.Product;
+import Bai17.quanlisanpham.controller.ProductController;
+import Bai17.quanlisanpham.entity.Product;
 
 import java.util.List;
 import java.util.Scanner;

@@ -1,9 +1,9 @@
-package Bai17.service;
+package Bai17.quanlisanpham.service;
 
 
 
-import Bai17.repository.ProductRepo;
-import Bai17.entity.Product;
+import Bai17.quanlisanpham.repository.ProductRepo;
+import Bai17.quanlisanpham.entity.Product;
 
 
 import java.util.List;
